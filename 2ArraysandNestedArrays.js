@@ -6,20 +6,20 @@
 // 1. Even Position Element
 
 
-// function sumEvenNumbers(numbers){
-//     let arr = numbers;
-//     let resultArray = [];
+function sumEvenNumbers(numbers){
+    let arr = numbers;
+    let resultArray = [];
 
-//     for (let i = 0; i < arr.length; i++) {
-//         let element = arr[i];
+    for (let i = 0; i < arr.length; i++) {
+        let element = arr[i];
         
-//         if (i % 2 === 0) { //Even Position Element
-//             resultArray.push(element);
-//         }
-//     }
+        if (i % 2 === 0) { //Even Position Element
+            resultArray.push(element);
+        }
+    }
 
-//     console.log(resultArray.join(' '));
-// }
+    console.log(resultArray.join(' '));
+}
 
 // sumEvenNumbers(['20', '30', '40','50', '60']);  // 20 40 60 
 // sumEvenNumbers(['5', '10']); // 5

@@ -11,17 +11,17 @@
 //The second parameter is the delimiter.
 
 
-// function joinArrayWithDelimiter(array, delimiter) {
+function joinArrayWithDelimiter(array, delimiter) {
 
-//     let newArray = array.join(delimiter);
+    let newArray = array.join(delimiter);
 
-//     console.log(newArray);
-// }
+    console.log(newArray);
+}
 
-// joinArrayWithDelimiter(['One','Two','Three','Four','Five'],'-');
-// //One-Two-Three-Four-Five
-// joinArrayWithDelimiter(['How about no?','I','will','not','do','it!'],'_');
-// //How about no?_I_will_not_do_it!
+joinArrayWithDelimiter(['One','Two','Three','Four','Five'],'-');
+//One-Two-Three-Four-Five
+joinArrayWithDelimiter(['How about no?','I','will','not','do','it!'],'_');
+//How about no?_I_will_not_do_it!
 
 
 //**************************************************************************************** */
@@ -36,19 +36,19 @@
 // If the step is 3, you need to return the 1-st,
 // the 4-th, the 7-th … and so on, until you reach the end of the array. 
 
-// function getEveryN_Element(array, step){
+function getEveryN_Element(array, step){
 
-//     let arr = [...array];
-//     let number = Number(step);
-//     let resultArray = [];
+    let arr = [...array];
+    let number = Number(step);
+    let resultArray = [];
 
-//     for (let i = 0; i < array.length; i+=number) {
-//         let element = array[i]; // 5 31 20
-//         //console.log(element);
-//         resultArray.push(element);
-//     }
-//     return resultArray;
-// }
+    for (let i = 0; i < array.length; i+=number) {
+        let element = array[i]; // 5 31 20
+        //console.log(element);
+        resultArray.push(element);
+    }
+    return resultArray;
+}
 
 
 // getEveryN_Element(['5','20','31','4','20'],2);  //['5', '31','20']
@@ -66,33 +66,33 @@
 //03. Add and Remove Elements 
 
 
-// function addAndRemoveElements(commandsInArray){
+function addAndRemoveElements(commandsInArray){
 
-//     let resultArray = [];
-//     let count = 0;
+    let resultArray = [];
+    let count = 0;
 
-//     for (let i = 0; i < commandsInArray.length; i++) {
-//         let element = commandsInArray[i];
-//         count++;
+    for (let i = 0; i < commandsInArray.length; i++) {
+        let element = commandsInArray[i];
+        count++;
 
-//         if (element === 'add') {
-//             resultArray.push(count); 
-//         }
-//         if (element === 'remove'){
-//             resultArray.pop();
-//         }
-//     }
+        if (element === 'add') {
+            resultArray.push(count); 
+        }
+        if (element === 'remove'){
+            resultArray.pop();
+        }
+    }
 
-//     if (resultArray.length === 0 ){
-//         console.log('Empty');
-//     } else {
+    if (resultArray.length === 0 ){
+        console.log('Empty');
+    } else {
 
-//         for (let j = 0; j < resultArray.length; j++) {
-//             let element = resultArray[j];
-//             console.log(element);
-//         }
-//     }
-// }
+        for (let j = 0; j < resultArray.length; j++) {
+            let element = resultArray[j];
+            console.log(element);
+        }
+    }
+}
 
 // addAndRemoveElements(['add','add','add','add']); //1 2 3 4
 // console.log(`------------------------------------------`);
@@ -111,20 +111,20 @@
 // The array should be rotated to the right side, meaning that the last
 // element should become the first, upon rotation. 
 
-// function rotateArray(arr, amountRotation){
+function rotateArray(arr, amountRotation){
 
-//     let count = amountRotation;
-//     let resultArray = [...arr];
+    let count = amountRotation;
+    let resultArray = [...arr];
 
-//     for (let i = 0; i < count; i++) {
+    for (let i = 0; i < count; i++) {
       
-//        let cutElement = resultArray.pop(); // 4 , 3
-//        //console.log(cutElement);
+       let cutElement = resultArray.pop(); // 4 , 3
+       //console.log(cutElement);
         
-//        resultArray.unshift(cutElement);
-//     }
-//     console.log(resultArray.join(' '));
-// }
+       resultArray.unshift(cutElement);
+    }
+    console.log(resultArray.join(' '));
+}
 
 
 // rotateArray(['1','2','3','4'],2);  //3 4 1 2 
@@ -141,41 +141,41 @@
 // 5. Extract Increasing Subset from Array
 
 
-// function filterOnlyBiggest(array){
+function filterOnlyBiggest(array){
 
-//     let arr = [...array];
-//     let buffArray = [];
-//     let x = Number.MIN_SAFE_INTEGER;
+    let arr = [...array];
+    let buffArray = [];
+    let x = Number.MIN_SAFE_INTEGER;
 
-//     for (let i = 0; i < arr.length; i++) {
-//         let numberX = Number(arr[i]);
+    for (let i = 0; i < arr.length; i++) {
+        let numberX = Number(arr[i]);
 
-//         if (numberX >= x){
-//             buffArray.push(numberX);
-//             x = numberX;
-//         }   
-//     }
-//     //console.log(buffArray);
-//     return buffArray;
+        if (numberX >= x){
+            buffArray.push(numberX);
+            x = numberX;
+        }   
+    }
+    //console.log(buffArray);
+    return buffArray;
 
 
-//             // // alternative to the top whit REDUCE
-//             // let biggest = Number.MIN_SAFE_INTEGER;
+            // alternative to the top whit REDUCE
+            let biggest = Number.MIN_SAFE_INTEGER;
 
-//             // const output = arr.reduce((acc, curr) => {
-//             //     if (curr >= biggest) {
-//             //     biggest = curr;
+            const output = arr.reduce((acc, curr) => {
+                if (curr >= biggest) {
+                biggest = curr;
 
-//             //     const tempArr = acc;
-//             //     tempArr.push(curr);
-//             //     return tempArr;
-//             //     }
+                const tempArr = acc;
+                tempArr.push(curr);
+                return tempArr;
+                }
 
-//             //     return acc;
-//             // }, []);
+                return acc;
+            }, []);
 
-//             // return output;
-// }
+            return output;
+}
 
 // filterOnlyBiggest([1,3,8,4,10,12,3,2,24]); // [1, 3, 8, 10, 12, 24]
 // console.log(`-----------------------`);
@@ -194,27 +194,27 @@
 // You will receive an array of names. Sort them alphabetically in ascending order and print a 
 // numbered list of all the names, each on a new line.
 
-// function sortListNames(arr){
+function sortListNames(arr){
 
-//     let array = [...arr];
+    let array = [...arr];
 
-//     array.sort( (a,b) => a.localeCompare(b)); //['Bob', 'Christina', 'Ema', 'John']
+    array.sort( (a,b) => a.localeCompare(b)); //['Bob', 'Christina', 'Ema', 'John']
 
-//     let count = 1;
+    let count = 1;
 
-//     for (let i = 0; i < array.length; i++) {
-//         let element = array[i];
-//         console.log(`${count}.${element}`);
-//         count++;
-//     }
-// }
+    for (let i = 0; i < array.length; i++) {
+        let element = array[i];
+        console.log(`${count}.${element}`);
+        count++;
+    }
+}
 
 
-// sortListNames(["John","Bob","Christina","Ema"]);
-// // 1.Bob
-// // 2.Christina
-// // 3.Ema
-// // 4.John
+sortListNames(["John","Bob","Christina","Ema"]);
+// 1.Bob
+// 2.Christina
+// 3.Ema
+// 4.John
 
 
 //******************************************************************************************************* */
@@ -227,23 +227,23 @@
 // biggest one, the third is the second smallest one, the fourth is the second biggest one, and so on.
 // Return the resulting array.
 
-// function sortNumbers(arr){
+function sortNumbers(arr){
 
-//     let array = [...arr];
-//     let buffArr =[];
-//     array.sort( (a,b) => a-b); //(10) [-3, 1, 3, 18, 31, 48, 52, 56, 63, 65]
+    let array = [...arr];
+    let buffArr =[];
+    array.sort( (a,b) => a-b); //(10) [-3, 1, 3, 18, 31, 48, 52, 56, 63, 65]
 
-//     while (array.length !== 0) {
-//         let x  = array.shift()
-//         let y = array.pop()
-//         buffArr.push(x,y); //-3, 65
-//     }
+    while (array.length !== 0) {
+        let x  = array.shift()
+        let y = array.pop()
+        buffArr.push(x,y); //-3, 65
+    }
 
-//     //console.log(buffArr); //(10) [-3, 65, 1, 63, 3, 56, 18, 52, 31, 48]
-//     return buffArr;
-// }
+    //console.log(buffArr); //(10) [-3, 65, 1, 63, 3, 56, 18, 52, 31, 48]
+    return buffArr;
+}
 
-// sortNumbers([1, 65, 3, 52, 48, 63, 31, -3, 18, 56]); // [-3, 65, 1, 63, 3, 56, 18, 52, 31, 48]
+sortNumbers([1, 65, 3, 52, 48, 63, 31, -3, 18, 56]); // [-3, 65, 1, 63, 3, 56, 18, 52, 31, 48]
 
 
 //************************************************************************************************************ */
@@ -256,43 +256,43 @@
 // and by alphabetical value in ascending order as second criteria. The comparison should be case-insensitive.
 // The input comes as an array of strings.
 
-// function sortArrBy2Criteria(arr){
+function sortArrBy2Criteria(arr){
 
-//     let array = [...arr];
+    let array = [...arr];
 
-//     let result = array.sort( (a,b) => {
-//         let criteria1 = a.length - b.length ;// word length
-//         let criteria2 = a.localeCompare(b); // by alphabetical
-//         return criteria1 || criteria2
-//     });
+    let result = array.sort( (a,b) => {
+        let criteria1 = a.length - b.length ;// word length
+        let criteria2 = a.localeCompare(b); // by alphabetical
+        return criteria1 || criteria2
+    });
 
-//     //console.log(result); //['beta', 'alpha', 'gamma']
+    //console.log(result); //['beta', 'alpha', 'gamma']
 
-//     //print logic
-//     for (let i = 0; i < result.length; i++) {
-//         let element = result[i];
-//         console.log(element);
-//     }
-// }
+    //print logic
+    for (let i = 0; i < result.length; i++) {
+        let element = result[i];
+        console.log(element);
+    }
+}
 
 
-// sortArrBy2Criteria(['alpha','beta', 'gamma']);
-// // beta
-// // alpha
-// // gamma
-// console.log(`----------------------------`);
-// sortArrBy2Criteria(['Isacc','Theodor', 'Jack','Harrison','George']);
-// // Jack
-// // Isacc
-// // George
-// // Theodor
-// // Harrison
-// console.log(`----------------------------`);
-// sortArrBy2Criteria(['test','Deny', 'omen','Default']);
-// // Deny
-// // omen
-// // test
-// // Default
+sortArrBy2Criteria(['alpha','beta', 'gamma']);
+// beta
+// alpha
+// gamma
+console.log(`----------------------------`);
+sortArrBy2Criteria(['Isacc','Theodor', 'Jack','Harrison','George']);
+// Jack
+// Isacc
+// George
+// Theodor
+// Harrison
+console.log(`----------------------------`);
+sortArrBy2Criteria(['test','Deny', 'omen','Default']);
+// Deny
+// omen
+// test
+// Default
 
 
 //************************************************************************************************************ */
@@ -355,13 +355,30 @@ mMatrix([[1, 0, 0],
 //******************************************************************************************************* */
 
 
+
+
+
+// https://softuni.bg/downloads/svn/js-advanced/May-2023/JS-Advanced/02.%20JS-Advanced-Arrays-and-Nested-Arrays/02.%20JS-Advanced-Arrays-and-Nested-Arrays-Exercise.pdf
+// https://judge.softuni.org/Contests/Compete/Index/2753#12
+
+
+
 // 10. Tic-Tac-Toe
 
 
-//11. Diagonal Attack
 
+//********************************************************************************* */
+
+//11. Diagonal Attack
+// https://pastebin.com/vS917DEC
+
+//******************************************************************************** */
 
 // 12. *Orbit
+//https://pastebin.com/jLYDF9gj
 
+//*************************************************************************************** */
 
 //13. Spiral Matrix
+// https://pastebin.com/GDywE8zj
+
